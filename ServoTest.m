@@ -9,6 +9,7 @@ end
 %2 = Set position command
 %0 = servo #
 %100 = position
+
 joy = vrjoystick(1);
 [axes,butts,povs] = read(joy);
 a = 100;
