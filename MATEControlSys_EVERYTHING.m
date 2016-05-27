@@ -19,19 +19,7 @@ writeDigitalPin(bb,pinSerialReset,0);
 pause(.25)
 writeDigitalPin(bb,pinSerialReset,1);
 
-%cam1 = webcam(1);
-%cam2 = webcam(2);
-%cam3 = webcam(3);
-%cam1.Resolution = '1280x720';
-%cam2.Resolution = '1280x720';
-%cam3.Resolution = '1280x720';
 
-%vp1 = vision.DeployableVideoPlayer;
-%vp2 = vision.DeployableVideoPlayer;
-%vp3 = vision.DeployableVideoPlayer;
-%vpo1 = vision.DeployableVideoPlayer;
-%vpo2 = vision.DeployableVideoPlayer;
-%vpo3 = vision.DeployableVideoPlayer;
 
 joy = vrjoystick(1);
 [axes,butts,povs] = read(joy);
@@ -249,28 +237,11 @@ while (butts(9) == 0)
         fprintf('Depth: %f meters \n\n', numpress); %Nicely format output
     end
 
-    
 
-% % Video of cameras
-    %vs1 = snapshot(cam1);
-    %vs2 = snapshot(cam2);
-    %vs3 = snapshot(cam3);
-    %vsr1 = imrotate(vs1,0);
-    %vsr2 = imrotate(vs2,-90);
-    %vsr3 = imrotate(vs3,-90);
-    %step(vpo1,vsr1)
-    %step(vpo2,vsr2)
-    %step(vpo3,vsr3)
     
     %pause(0.01)
 end
 
-% Release vision players and clear variables
+% Release and clear variables
 display 'Control Ended';
-%release(vp1)
-%release(vp2)
-%release(vp3)
-%release(vpo1)
-%release(vpo2)
-%release(vpo3)
 clear variables
